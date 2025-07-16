@@ -1,11 +1,12 @@
+// src/components/HomePage.tsx
+
 import React from 'react';
+// Step 1: Import the Link component from react-router-dom
+import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, Zap, Heart } from 'lucide-react';
 
-interface HomePageProps {
-  onNavigateToDesign: () => void;
-}
-
-const HomePage: React.FC<HomePageProps> = ({ onNavigateToDesign }) => {
+// Step 2: Remove the props interface and the props from the component definition
+const HomePage: React.FC = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -32,17 +33,20 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigateToDesign }) => {
               From concept to creation in seconds.
             </p>
 
-            {/* CTA Button */}
-            <button
-              onClick={onNavigateToDesign}
-              className="group inline-flex items-center space-x-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
-            >
-              <span className="text-lg">Create Your Design</span>
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
-            </button>
+            {/* Step 3: Wrap the CTA Button with a Link component */}
+            <Link to="/design">
+              <button
+                // The onClick is no longer needed here
+                className="group inline-flex items-center space-x-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
+              >
+                <span className="text-lg">Create Your Design</span>
+                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
+              </button>
+            </Link>
 
             {/* Stats */}
             <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
+              {/* ... stats content remains the same ... */}
               <div className="text-center">
                 <div className="text-3xl font-bold text-white mb-2">10K+</div>
                 <div className="text-white/60">Designs Created</div>
@@ -62,6 +66,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigateToDesign }) => {
 
       {/* Features Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
+        {/* ... features section content remains the same ... */}
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">How It Works</h2>
@@ -71,7 +76,6 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigateToDesign }) => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Step 1 */}
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 text-center hover:bg-white/15 transition-all duration-300">
               <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Heart className="h-8 w-8 text-white" />
@@ -82,7 +86,6 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigateToDesign }) => {
               </p>
             </div>
 
-            {/* Step 2 */}
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 text-center hover:bg-white/15 transition-all duration-300">
               <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Zap className="h-8 w-8 text-white" />
@@ -93,7 +96,6 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigateToDesign }) => {
               </p>
             </div>
 
-            {/* Step 3 */}
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 text-center hover:bg-white/15 transition-all duration-300">
               <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Sparkles className="h-8 w-8 text-white" />
@@ -117,13 +119,15 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigateToDesign }) => {
             <p className="text-xl text-white/70 mb-8">
               Join thousands of creators who are already wearing their feelings
             </p>
-            <button
-              onClick={onNavigateToDesign}
-              className="group inline-flex items-center space-x-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105"
-            >
-              <span className="text-lg">Start Designing Now</span>
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
-            </button>
+            {/* Step 4: Wrap the second CTA Button with a Link component as well */}
+            <Link to="/design">
+              <button
+                className="group inline-flex items-center space-x-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105"
+              >
+                <span className="text-lg">Start Designing Now</span>
+                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
+              </button>
+            </Link>
           </div>
         </div>
       </section>
