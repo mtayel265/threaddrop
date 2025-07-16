@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Mail, Lock, Eye, EyeOff, Loader2 } from 'lucide-react';
-import { supabase } from '../lib/supabaseClient';
+import { supabase } from '../src/supabaseClient';
 
 interface FormData {
   emailOrPhone: string;
