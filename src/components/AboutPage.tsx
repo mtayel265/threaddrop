@@ -206,7 +206,7 @@ const AboutPage: React.FC = () => {
                 href="mailto:hello@threaddrop.com" 
                 className="text-purple-400 hover:text-purple-300 transition-colors duration-200"
               >
-                hello@threaddrop.com
+                threaddrop@zohomail.com
               </a>
             </div>
           </div>
